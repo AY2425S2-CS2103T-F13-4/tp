@@ -1,0 +1,88 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":NoteCommandParser" as NoteCommandParser LOGIC_COLOR
+participant "n:NoteCommand" as NoteCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant "m:Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("note 1 nt/Needs help with English")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("note 1 nt/Needs help with English")
+activate AddressBookParser
+
+create NoteCommandParser
+AddressBookParser -> NoteCommandParser
+activate NoteCommandParser
+
+NoteCommandParser --> AddressBookParser
+deactivate NoteCommandParser
+
+AddressBookParser -> NoteCommandParser : parse("1 nt/Needs help with English")
+activate NoteCommandParser
+
+create NoteCommand
+NoteCommandParser -> NoteCommand : NoteCommand(Index, "Needs help with English")
+activate NoteCommand
+
+NoteCommand --> NoteCommandParser
+deactivate NoteCommand
+
+NoteCommandParser --> AddressBookParser : n
+deactivate NoteCommandParser
+
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+NoteCommandParser -[hidden]-> AddressBookParser
+destroy NoteCommandParser
+
+AddressBookParser --> LogicManager : n
+deactivate AddressBookParser
+
+LogicManager -> NoteCommand : execute(m)
+activate NoteCommand
+
+NoteCommand -> Model : getFilteredPersonList()
+activate Model
+Model --> NoteCommand : lastShownList
+deactivate Model
+
+NoteCommand -> NoteCommand : personToNote = lastShownList.get(index)
+activate NoteCommand #DarkSalmon
+deactivate NoteCommand
+
+NoteCommand -> NoteCommand : updatedPerson = personToNote.withNotes(note)
+activate NoteCommand #DarkSalmon
+deactivate NoteCommand
+
+NoteCommand -> Model : setPerson(personToNote, updatedPerson)
+activate Model
+Model --> NoteCommand
+deactivate Model
+
+NoteCommand -> Model : updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS)
+activate Model
+Model --> NoteCommand
+deactivate Model
+
+create CommandResult
+NoteCommand -> CommandResult : CommandResult(String.format(MESSAGE_ADD_NOTE_SUCCESS, Messages.format(updatedPerson)))
+activate CommandResult
+CommandResult --> NoteCommand
+deactivate CommandResult
+
+NoteCommand --> LogicManager : r
+deactivate NoteCommand
+
+[<--LogicManager : r
+deactivate LogicManager
+@enduml
+

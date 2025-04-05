@@ -296,7 +296,7 @@ The `find` command allows you to search for people by either their name or phone
 </box>
 
 **Examples:**
-* `find 9876` returns `987665432`, `97654678` and `90873648`
+* `find 9876` returns `98766543`, `97659876` and `90987648`
 * `find John` returns `Johnny Lee` and `John Doe`
 * `find al` returns `Roy Balakrishnan` and `Alex Yeoh`<br>
   ![result for 'find ale'](images/findFeatureExample.png)

@@ -27,8 +27,8 @@ public class FavouriteCommandTest {
         CommandResult result = favouriteCommand.execute(model);
 
         Person updatedPerson = model.getFilteredPersonList().get(0);
-        assertEquals(String.format(FavouriteCommand.MESSAGE_FAVOURITE_SUCCESS, updatedPerson),
-                result.getFeedbackToUser());
+        assertEquals(String.format(FavouriteCommand.MESSAGE_FAVOURITE_SUCCESS,
+                    Messages.format(updatedPerson)), result.getFeedbackToUser());
     }
 
     @Test
@@ -45,7 +45,8 @@ public class FavouriteCommandTest {
         FavouriteCommand favouriteCommand = new FavouriteCommand(index);
 
         Person updatedPerson = model.getFilteredPersonList().get(0).toggleFavourite();
-        String expectedMessage = String.format(FavouriteCommand.MESSAGE_FAVOURITE_SUCCESS, updatedPerson);
+        String expectedMessage = String.format(FavouriteCommand.MESSAGE_FAVOURITE_SUCCESS,
+                Messages.format(updatedPerson));
 
         CommandResult result = favouriteCommand.execute(model);
         assertEquals(expectedMessage, result.getFeedbackToUser());

@@ -22,7 +22,8 @@ public class Messages {
     public static final String MESSAGE_DUPLICATE_FIELDS =
                 "Multiple values specified for the following single-valued field(s): ";
     public static final String MESSAGE_NO_RESULTS = "No contacts found.";
-    public static final String MESSAGE_INVALID_NAME = "Names can only contain alphabetic characters and spaces.";
+    public static final String MESSAGE_INVALID_NAME = "Names can only contain alphabetic and special characters. \n"
+            + "If you're trying to search by phone number, enter digits without spaces";
 
     /**
      * Returns an error message indicating the duplicate prefixes.

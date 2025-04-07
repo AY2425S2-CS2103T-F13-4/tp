@@ -149,7 +149,8 @@
         "ungrouping-contacts-ungroup": "Ungrouping contacts : ungroup",
         "faq": "FAQ",
         "known-issues": "Known issues",
-        "command-summary": "💻 Command summary"
+        "command-summary": "💻 Command summary",
+        "prefix-summary": "Prefix Summary"
       },
       "headingKeywords": {}
     },

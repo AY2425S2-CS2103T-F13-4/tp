@@ -359,6 +359,6 @@ with(this){return _c('h3',{attrs:{"id":"achievements"}},[_c('strong',[_v("Achiev
 with(this){return _c('ul',[_c('li',[_v("Transformed AB3 into ClassHive, a specialised tool for teachers.")]),_v(" "),_c('li',[_v("Enhanced usability with role-based contacts, sorting, and favourites.")]),_v(" "),_c('li',[_v("Easy-to-use application that simplifies contact management for teachers.")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Tue, 8 Apr 2025, 4:20:32 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Tue, 8 Apr 2025, 4:29:32 GMT+8]")])])])}
 }];
   

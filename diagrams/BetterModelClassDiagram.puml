@@ -18,4 +18,9 @@ Person *--> Name
 Person *--> Phone
 Person *--> Email
 Person *--> Address
+Person *--> Role
+Person *--> Grade
+Person *--> Class
+Person *--> Parent/Child's Name
+Person *--> Parent/Child's Phone
 @enduml

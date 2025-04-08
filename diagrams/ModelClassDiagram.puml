@@ -42,6 +42,11 @@ Person *--> Phone
 Person *--> Email
 Person *--> Address
 Person *--> "*" Tag
+Person *--> Role
+Person *--> Grade
+Person *--> Class
+Person *--> RelativeName
+Person *--> RelativePhone
 
 Person -[hidden]up--> I
 UniquePersonList -[hidden]right-> I

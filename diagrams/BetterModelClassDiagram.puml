@@ -21,6 +21,6 @@ Person *--> Address
 Person *--> Role
 Person *--> Grade
 Person *--> Class
-Person *--> Parent/Child's Name
-Person *--> Parent/Child's Phone
+Person *--> RelativeName
+Person *--> RelativePhone
 @enduml
